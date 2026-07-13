@@ -2,12 +2,12 @@
 import { VueWrapperProps } from "@visuallyjs/browser-ui-vue"
 import { getNodeLabel } from "../node-types"
 
-const {model, obj} = defineProps<VueWrapperProps>()
+const {model, vertex, data} = defineProps<VueWrapperProps>()
 
-const label = getNodeLabel(obj.type)
+const label = getNodeLabel(vertex.type)
 
 function removeNode() {
-  model.removeNode(obj)
+  model.removeNode(vertex)
 }
 </script>
 
