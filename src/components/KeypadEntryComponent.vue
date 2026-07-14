@@ -3,16 +3,12 @@
 import { ALL_KEYS } from "../constants"
 
 import { VueWrapperProps } from "@visuallyjs/browser-ui-vue"
-const {model, obj} = defineProps<VueWrapperProps>()
-
-function removeNode() {
-  model.removeNode(obj)
-}
+const {model, vertex} = defineProps<VueWrapperProps>()
 </script>
 
 <template>
   <div class="vjs-callflow-node" data-vjs-target="true">
-    <div class="vjs-callflow-delete" @click="removeNode"></div>
+    <div class="vjs-callflow-delete" @click="model.removeNode(vertex)"></div>
     <div class="vjs-callflow-label">
       <div class="vjs-callflow-node-icon" />
       Keypad Entry

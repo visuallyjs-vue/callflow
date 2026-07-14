@@ -13,7 +13,7 @@ function removeNode() {
 
 <template>
   <div class="vjs-callflow-node" data-vjs-target="true">
-    <div class="vjs-callflow-delete" @click="removeNode"></div>
+    <div class="vjs-callflow-delete" @click="removeNode()"></div>
     <div class="vjs-callflow-label">
       <div class="vjs-callflow-node-icon" />
       {{ label }}

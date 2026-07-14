@@ -1,22 +1,19 @@
 <script setup lang="ts">
 
-import { VueWrapperProps } from "@visuallyjs/browser-ui-vue"
-const {model, obj} = defineProps<VueWrapperProps>()
+import { type VueWrapperProps } from "@visuallyjs/browser-ui-vue"
+const {model, vertex, data} = defineProps<VueWrapperProps>()
 
-function removeNode() {
-  model.removeNode(obj)
-}
 </script>
 
 <template>
   <div class="vjs-callflow-node" data-vjs-target="true">
-    <div class="vjs-callflow-delete" @click="removeNode"></div>
+    <div class="vjs-callflow-delete" @click="model.removeNode(vertex)"></div>
     <div class="vjs-callflow-label">
       <div class="vjs-callflow-node-icon" />
       Forward to Phone
     </div>
-    <div v-if="obj.data.number != null" class="vjs-callflow-node-text">
-      {{ obj.data.number }}
+    <div v-if="data.number != null" class="vjs-callflow-node-text">
+      {{ data.number }}
     </div>
     <div class="vjs-callflow-condition" data-vjs-port="success">
       Success

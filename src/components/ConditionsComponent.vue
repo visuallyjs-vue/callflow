@@ -1,38 +1,35 @@
 <script setup lang="ts">
-import { Node } from "@visuallyjs/browser-ui"
 import { VueWrapperProps } from "@visuallyjs/browser-ui-vue"
-const {model, obj} = defineProps<VueWrapperProps>()
+import { Node } from "@visuallyjs/browser-ui"
 
-function removeNode() {
-  model.removeNode(obj)
-}
+const {model, vertex, data} = defineProps<VueWrapperProps<Node>>()
 
 function editCondition(id: string) {
-  const port = obj.getPort(id)
+  const port = vertex.getPort(id)
   if (port != null) {
     model.setSelection(port)
   }
 }
 
 function removeCondition(id: string) {
-  const port = obj.getPort(id)
+  const port = vertex.getPort(id)
   if (port) {
     model.removePort(port)
   }
 }
 
 function addCondition() {
-  const order = obj.data.conditions.length
+  const order = data.conditions.length
   const id = `${order}`
 
-  model.addNewPort(obj, "condition", {
+  model.addNewPort(vertex, "condition", {
     id,
     order,
     value: "New Condition"
   })
 
   setTimeout(() => {
-    const port = obj.getPort(id)
+    const port = vertex.getPort(id)
     if (port) {
       model.setSelection(port)
     }
@@ -42,7 +39,7 @@ function addCondition() {
 
 <template>
   <div class="vjs-callflow-node" data-vjs-target="true">
-    <div class="vjs-callflow-delete" @click="removeNode"></div>
+    <div class="vjs-callflow-delete" @click="model.removeNode(vertex)"></div>
     <div class="vjs-callflow-label">
       <div class="vjs-callflow-node-icon" />
       Conditions
