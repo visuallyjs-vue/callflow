@@ -27,7 +27,10 @@ const renderOptions = {
                 type:GeneratedGridBackground.type
             }
         }
-    ]
+    ],
+    dragOptions:{
+        cssFilter:".vjs-callflow-delete, .vjs-callflow-add-condition"
+    }
 }
 
 export default renderOptions
