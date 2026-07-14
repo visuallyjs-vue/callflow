@@ -38,6 +38,10 @@ function cancel() {
 
 <template>
   <InspectorComponent class="vjs-callflow-inspector" v-model="currentObj">
+    <template v-if="currentType == null">
+      <span>Click an element to select it</span>
+    </template>
+
     <template v-if="currentType === TYPE_PLAY_AUDIO">
       <span>Text:</span>
       <textarea rows="10" cols="10" :vjs-att="PROPERTY_TEXT" vjs-focus="true" placeholder="enter text to speak..." />
