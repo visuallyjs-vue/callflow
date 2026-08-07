@@ -3,7 +3,8 @@ import {
     SurfaceProvider,
     SurfaceComponent,
     ControlsComponent,
-    MiniviewComponent
+    MiniviewComponent,
+  GridBackgroundComponent
 } from "@visuallyjs/browser-ui-vue"
 
 import renderOptions from './render-options'
@@ -30,6 +31,7 @@ defineProps<{
 
               <ControlsComponent/>
               <MiniviewComponent/>
+            <GridBackgroundComponent/>
           </SurfaceComponent>
           <div class="vjs-callflow-rhs">
               <CallFlowPalette/>

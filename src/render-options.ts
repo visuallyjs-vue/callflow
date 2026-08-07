@@ -1,4 +1,4 @@
-import {BackgroundPlugin, GeneratedGridBackground, AnchorLocations, CONNECTOR_TYPE_ORTHOGONAL} from "@visuallyjs/browser-ui";
+import {PLUGIN_TYPE_LINE_CROSSINGS, AnchorLocations, CONNECTOR_TYPE_ORTHOGONAL} from "@visuallyjs/browser-ui";
 
 const renderOptions = {
 
@@ -21,12 +21,7 @@ const renderOptions = {
         }
     },
     plugins:[
-        {
-            type:BackgroundPlugin.type,
-            options:{
-                type:GeneratedGridBackground.type
-            }
-        }
+        PLUGIN_TYPE_LINE_CROSSINGS
     ],
     dragOptions:{
         cssFilter:".vjs-callflow-delete, .vjs-callflow-add-condition"

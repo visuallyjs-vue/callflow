@@ -22,6 +22,10 @@ body * {
   background-color: #f1f3f5;
 }
 
+.vjs-callflow-canvas {
+    flex-grow: 1;
+}
+
 .vjs-callflow-rhs {
   flex-basis: 450px;
   display: flex;
